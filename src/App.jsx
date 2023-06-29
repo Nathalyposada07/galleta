@@ -3,13 +3,10 @@ import Fortuna from './components/Fortuna'
 import Galleta from './components/Galleta'
 import phrases from './data/phrases.json'
 import { useState, useEffect } from 'react'
-import backgroundImage1 from './img/FONDO 1.jpg'
-import backgroundImage2 from './img/FONDO 2.jpg'
-import backgroundImage3 from './img/FONDO 3.jpg'
-import backgroundImage4 from './img/FONDO 4.jpg'
+
 
 function App() {
-  const backgrounds = [backgroundImage1, backgroundImage2, backgroundImage3, backgroundImage4, backgroundImage1, backgroundImage2, backgroundImage3, backgroundImage4, backgroundImage1, backgroundImage2, backgroundImage3, backgroundImage4, backgroundImage1, backgroundImage2, backgroundImage3];
+  const backgrounds = ["/img/fondo-1.jpg", "/img/fondo-2.jpg", "/img/fondo-3.jpg", "/img/fondo-4.jpg", "/img/fondo-1.jpg", "/img/fondo-2.jpg", "/img/fondo-3.jpg", "/img/fondo-4.jpg", "/img/fondo-1.jpg", "/img/fondo-2.jpg", "/img/fondo-3.jpg", "/img/fondo-4.jpg", "/img/fondo-1.jpg", "/img/fondo-2.jpg", "/img/fondo-3.jpg"];
   const [index, setIndex] = useState(0)
   const currentBackground = backgrounds[index]
 
@@ -22,6 +19,12 @@ function App() {
     const randomIndex = Math.floor(Math.random() * phrases.length)
     setIndex(randomIndex)
   }, [])
+
+  document.body.style=`background: URL(${ backgrounds[index]}) no-repeat center center fixed;
+  baground-size:cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;`
 
   return (
     <div className="container">

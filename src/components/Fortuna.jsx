@@ -3,7 +3,7 @@ const Fortuna = (props, backgroundImg) => {
 
     return (
         
-        <article style={{background: backgroundImg}}>
+        <article>
             <h1 className="title">GALLETAS DE LA FORTUNA</h1>
             <div className="card">
                 <p>{phrase}</p>
